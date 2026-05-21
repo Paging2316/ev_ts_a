@@ -13,7 +13,8 @@
                         appleGray: {
                             50: '#f5f5f7',
                             100: '#e8e8ed',
-                            200: '#d2d2d7',
+                            200: '#86868b',
+                            300: '#d2d2d7',
                             800: '#1d1d1f',
                             900: '#000000'
                         },
@@ -25,7 +26,7 @@
                         }
                     },
                     fontFamily: {
-                        sans:,
+                        sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
                     }
                 }
             }
@@ -82,7 +83,7 @@
 
         <section id="overview" class="space-y-6 pt-4">
             <div class="text-center md:text-left space-y-2">
-                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-appleGray-900">Mega-Events als B2B-Wachstumstreiber</h1>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-appleGray-900">Mega-Events als B2B-Wachstumtreiber</h1>
                 <p class="text-lg text-appleGray-200 max-w-3xl">
                     Strategisches Intelligence-Portal zur herstellerunabhängigen Markt- und Kommunikationsdurchdringung im globalen Schienen- und Straßentransit.
                 </p>
@@ -130,10 +131,10 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                 <div class="lg:col-span-4 space-y-2 h-[550px] overflow-y-auto pr-2" id="eventListContainer">
-                    </div>
+                </div>
 
                 <div class="lg:col-span-8 bg-white p-8 rounded-3xl border border-appleGray-100 shadow-sm space-y-6 transition-all duration-300" id="eventDetailContainer">
-                    </div>
+                </div>
             </div>
         </section>
 
@@ -164,7 +165,7 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-appleGray-100" id="scoringTableBody">
-                        </tbody>
+                    </tbody>
                 </table>
             </div>
         </section>
@@ -183,7 +184,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="stakeholderContainer">
-                </div>
+            </div>
         </section>
 
         <section id="linkedin" class="space-y-8">
@@ -201,12 +202,12 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="postsContainer">
-                </div>
+            </div>
 
             <div class="pt-6 space-y-4">
                 <h3 class="text-lg font-bold tracking-tight text-appleGray-900">5 Größere Content-Serien</h3>
                 <div class="space-y-3" id="seriesAccordion">
-                    </div>
+                </div>
             </div>
         </section>
 
@@ -230,7 +231,7 @@
                 </div>
 
                 <div class="max-w-4xl mx-auto bg-appleGray-50 p-6 rounded-2xl border border-appleGray-100 min-h-[220px] transition-all duration-300" id="timelineContent">
-                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -239,7 +240,7 @@
         <div class="mx-auto max-w-7xl px-6 space-y-4">
             <p class="font-semibold text-appleGray-800">Traktionssysteme Austria GmbH | Strategic Interactive Playbook</p>
             <p>Konzipiert für B2B-Marktentwicklung und strategische Thought-Leadership-Kommunikation auf LinkedIn (2026 – 2031).</p>
-            <p>© 2026 TSA Traktionssysteme Austria. Alle Rechte vorbehalten. Apple-Stil Mockup.</p>
+            <p>© 2026 TSA Traktionssysteme Austria. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
@@ -250,9 +251,24 @@
 
     <script>
         // --- 1. DATA DEFINITIONS ---
-        const eventsData =,
-                relevance:,
-                stakeholders: "NJ Transit, Sound Transit Seattle, Toronto Transit Commission (TTC), Metrolink LA, TransLink Vancouver sowie die Transport-Mobilitäts-Abteilung der FIFA.",
+        const eventsData = [
+            {
+                id: 1,
+                name: "FIFA World Cup 2026",
+                year: "2026",
+                location: "USA, Kanada, Mexiko",
+                visitors: "Über 6 Millionen Stadionbesucher erwartet",
+                score: 9.3,
+                metrics: { tech: 9, access: 10, volume: 10, safety: 8 },
+                problems: "Extreme geografische Fragmentierung über 16 Spielorte. Drastische Verkehrsspitzen belasten den veralteten US-Schienennahverkehr und erfordern eine massive Flottenverfügbarkeit unter extremen Belastungen.",
+                infrastructure: [
+                    "Sanierung und Ausbau des Northeast Corridor (NEC)",
+                    "Flottenaufstockungen bei NJ Transit, MBTA und SEPTA",
+                    "Erweiterung des Bus-Rapid-Transit (BRT) in Seattle und Atlanta",
+                    "Ausbau der Anbindung der Flughäfen an das Metronetz in LA und Chicago"
+                ],
+                relevance: ["Rail", "Metro", "Road", "After-Sales", "Buy America"],
+                stakeholders: "NJ Transit, Sound Transit Seattle, Toronto Transit Commission (TTC), Metrolink LA, TransLink Vancouver sowie die Transport-Abteilung der FIFA.",
                 opportunities: "Fokus liegt primär auf dem After-Sales-Bereich, der Ersatzteilversorgung und dem herstellerunabhängigen Retrofit-Service. Der extreme Stresstest für die alternden US-Flotten ermöglicht es TSA, sich über den 'Long-Life Value Service' für anschließende Modernisierungen zu bewerben.",
                 hook: "New York Penn Station sperrt Gleise für Pendler: Wie die WM 2026 den nordamerikanischen Nahverkehr an seine physikalischen Grenzen bringt."
             },
@@ -265,8 +281,13 @@
                 score: 8.7,
                 metrics: { tech: 8, access: 9, volume: 8, safety: 10 },
                 problems: "Enorme geografische Fragmentierung der Sportstätten im alpinen Raum. Transport von Massen aus Mailand/Venedig in sensible, verkehrstechnisch empfindliche Bergregionen erfordert drastische Reduktion des Pkw-Individualverkehrs zur CO₂-Vermeidung.",
-                infrastructure:,
-                relevance:,
+                infrastructure: [
+                    "Neubau und Reaktivierung alpiner Schienenstrecken",
+                    "Erweiterung des Fuhrparks der S-Bahn Mailand (ATM)",
+                    "Lieferung neuer Niederflurtrams für Mailand durch Stadler",
+                    "Elektrifizierung von Regionalbusstrecken in Südtirol"
+                ],
+                relevance: ["Rail", "Metro", "Alpine", "Tram"],
                 stakeholders: "Rete Ferroviaria Italiana (RFI), ATM Mailand, Trenitalia, Italo, das italienische Verkehrsministerium (MIT) sowie Stadler Rail.",
                 opportunities: "Direkte Lieferchancen von Getrieben und Antrieben für Stadtbahn- und Metro-Modernisierungen (z. B. Nachbereitung der Tram-Projekte mit Stadler). Die extrem dichten Metrosysteme und alpinen Zuglinien bieten ideale After-Sales- und Neugeschäftspotenziale für TSA.",
                 hook: "74 neue Stadler Tramlink Straßenbahnen für die italienische Tram-Hauptstadt: Wie innovative Drehgestelle und Antriebe den städtischen Lärmpegel drastisch senken."
@@ -280,8 +301,12 @@
                 score: 7.1,
                 metrics: { tech: 7, access: 6, volume: 6, safety: 10 },
                 problems: "Verzicht auf ein zentrales, permanent gebautes Athletendorf aus Kostengründen. Unterbringung von 4.600 Personen auf dem Kreuzfahrtschiff 'Costa Serena' im Hafen und 2.000 in temporären Holzhütten. Zusammenfallen mit der pazifischen Taifun-Saison erfordert robusteste, wetterfeste Zubringer-Mobilität.",
-                infrastructure:,
-                relevance:,
+                infrastructure: [
+                    "Flottenaufrüstung der Nagoya Municipal Subway",
+                    "Infrastrukturanbindung des Hafens Nagoya für Logistik-Shuttles",
+                    "Ausbau autonomer Zubringersysteme in der Präfektur Aichi"
+                ],
+                relevance: ["Metro", "Airport", "Weather-Resistant"],
                 stakeholders: "Aichi-Nagoya Games Organizing Committee, Nagoya Municipal Transportation Bureau, JR Central, Meitetsu, Kintetsu.",
                 opportunities: "Indirekte Positionierung über globale OEMs zur Lieferung vibrations- und feuchtigkeitsresistenter Antriebe für anspruchsvolle klimatische Hafenanbindungen in Ostasien.",
                 hook: "Ein Kreuzfahrtschiff als Olympisches Dorf und Taifun-Saison vor der Tür: Wie Nagoya die Transportresilienz für 15.000 Sportler sichert."
@@ -295,8 +320,12 @@
                 score: 7.1,
                 metrics: { tech: 8, access: 7, volume: 7, safety: 6 },
                 problems: "Das neue Expo-Gelände und das Nationalstadion entstehen auf der 'grünen Wiese' im Vorort Surcin ohne Anbindung. Verschärfte Sicherheitsdebatten im Schienensektor nach dem Bahnhofeinsturz in Novi Sad 2024 erfordern lückenlose Qualität und normative Konformität.",
-                infrastructure:,
-                relevance:,
+                infrastructure: [
+                    "Neubau einer zweigleisigen, 18 km langen Bahnstrecke vom Hauptbahnhof Belgrad über den Flughafen Nikola Tesla bis zum Expo-Gelände",
+                    "Beschaffung neuer Elektrotriebzüge für den S-Bahn-Betrieb BG:Voz",
+                    "Aufbau eines dichten E-Bus-Shuttlesystems"
+                ],
+                relevance: ["Rail", "Airport", "E-Bus", "Safety-Norms"],
                 stakeholders: "Serbisches Finanzministerium, Expo 2027 d.o.o., Infrastruktura Železnice Srbije, chinesische Staatskonzerne (PowerChina, CRIC, CCCC).",
                 opportunities: "Da Bauaufträge politisch an chinesische Konsortien vergeben wurden, liegt die B2B-Chance für TSA in der Zulieferung zertifizierter, brandschutz- und normkonformer Antriebskomponenten an europäische OEMs, die sich für die Fahrzeugausschreibungen der Staatsbahn bewerben.",
                 hook: "18 Milliarden Dollar für Belgrads Schienenoffensive: Warum höchste Sicherheitsstandards und zertifizierte Antriebe im modernen Schienenbau unumgänglich sind."
@@ -310,8 +339,12 @@
                 score: 7.5,
                 metrics: { tech: 8, access: 7, volume: 7, safety: 8 },
                 problems: "Lima gilt als eine der verkehrsreichsten Megacitys Lateinamerikas. Dezentrale Sportstätten müssen komplett staufrei und emissionsarm verbunden werden, was mit dem konventionellen Straßensystem unmöglich ist.",
-                infrastructure:,
-                relevance:,
+                infrastructure: [
+                    "Beschleunigung des Baus der fahrerlosen Metro-Linie 2",
+                    "Ausschreibung einer neuen Schnellbahn Lima-Ica (6,5 Mrd. USD)",
+                    "Modernisierung der historischen Andenbahn (FCCA)"
+                ],
+                relevance: ["Metro", "Rail", "High-Altitude"],
                 stakeholders: "MTC (Ministerium für Transport), IPD (Instituto Peruano del Deporte), Metro Lima Betreiber, Alstom, CAF, chinesische Konsortien.",
                 opportunities: "Anden-Topografie und extremes Klima verlangen hochrobuste Spezialantriebe. TSA kann sich über europäische Fahrzeughersteller für die Lieferung staub- und vibrationsresistenter Radsatzgetriebe und Traktionsmotoren für das Lima-Ica-Projekt und die Andenbahn empfehlen.",
                 hook: "Mit 200 km/h durch die Küstenwüste: Wie Perus neue 6,5-Milliarden-Dollar-Schnellbahn Lima–Ica die Mobilität Lateinamerikas revolutioniert."
@@ -324,9 +357,13 @@
                 visitors: "Fast 3 Millionen Stadionbesucher",
                 score: 8.7,
                 metrics: { tech: 9, access: 8, volume: 8, safety: 10 },
-                problems: "Turnier erstreckt sich über 4 Nationen, was massive interurbane Logistikkoordination verlangt. Umweltschonende Vorgabe: Über 80% aller Ticketinhaber müssen ausschließlich per ÖPNV, S-Bahn oder Bus zu den 9 Stadien reisen.",
-                infrastructure:,
-                relevance:,
+                problems: "Turnier erstreckt sich über 5 Partnerverbände, was massive interurbane Logistikkoordination verlangt. Umweltschonende Vorgabe: Über 80% aller Ticketinhaber müssen ausschließlich per ÖPNV, S-Bahn oder Bus zu den 10 Stadien reisen.",
+                infrastructure: [
+                    "Zusätzliche Beschaffungen von emissionsfreien Doppelstock- und Transitbussen",
+                    "Kapazitätserweiterungen der S-Bahn Netze in Manchester, Birmingham, Belfast und Dublin",
+                    "Metro-Modernisierungen in Newcastle und Glasgow"
+                ],
+                relevance: ["Rail", "Metro", "E-Bus", "Retrofit"],
                 stakeholders: "Transport for London (TfL), Transport for Greater Manchester (TfGM), irische NTA, Wrightbus, Alexander Dennis, Alstom, Stadler Rail.",
                 opportunities: "Enorme Absatzpotenziale für TSAs hocheffiziente Permanentmagnetmotoren und Asynchronantriebe für die neuen Elektrobusflotten britischer OEMs (z. B. Wrightbus, ADL) sowie für anstehende Stadtbahn-Erweiterungen.",
                 hook: "3 Millionen Fans, 4 Nationen, 80 % ÖPNV-Quote: Warum die Euro 2028 den emissionsfreien Nahverkehr auf der Straße und Schiene massiv beschleunigt."
@@ -340,8 +377,13 @@
                 score: 10.0,
                 metrics: { tech: 10, access: 10, volume: 10, safety: 10 },
                 problems: "LA ist chronisch überlastet und extrem Pkw-geprägt. Das offizielle Olympia-Mobilitätsziel lautet 'Car-Free Games': Alle Zuschauer müssen Spielstätten ausschließlich per ÖPNV erreichen, was 1 Million zusätzliche Fahrten pro Tag bedeutet.",
-                infrastructure:,
-                relevance:,
+                infrastructure: [
+                    "Initiative 'Twenty-Eight by '28' (28 massive Transitprojekte)",
+                    "Erweiterung der Metro-Linie D (Purple Line Extension)",
+                    "Neubau des Automated People Mover (APM) am Flughafen LAX",
+                    "Beschaffung von über 1.000 emissionsfreien Elektrobussen"
+                ],
+                relevance: ["Metro", "E-Bus", "Airport", "Buy America", "PMSM"],
                 stakeholders: "LA Metro, Caltrans, Metrolink, LA Mayor's Office, Siemens Mobility, Alstom, New Flyer, Gillig, BYD.",
                 opportunities: "Absolutes Fokusereignis. Hervorragende Absatzaussichten sowohl im Rail- als auch im Road-Sektor. Über die Niederlassung Traction Systems Inc. in Somerville, NJ, erfüllt TSA die strengen 'Buy America'-Kriterien vollständig.",
                 hook: "20 Milliarden Dollar für 28 Projekte: Wie Los Angeles vor den Spielen 2028 den Sprung zur schienen- und busbasierten Megacity vollzieht."
@@ -355,8 +397,12 @@
                 score: 9.1,
                 metrics: { tech: 10, access: 9, volume: 8, safety: 9 },
                 problems: "Transport gewaltiger Zuschauerströme in fragile, alpine Ökosysteme unter extremen Winterbedingungen. Französischer Staatsplan verbietet neue Parkplatzbauten an den Skipisten und erzwingt schienen- und seilbahngebundene Anreise.",
-                infrastructure:,
-                relevance:,
+                infrastructure: [
+                    "Elektrifizierung und Modernisierung der Strecken um Chamonix und Albertville",
+                    "Ausbau der Hochgeschwindigkeitsstrecke Paris-Lyon-Turin (Susa-Tunnel)",
+                    "Modernisierung regionaler Schienenfahrzeuge und Zahnradbahnen"
+                ],
+                relevance: ["Rail", "Alpine", "High-Efficiency", "Low-Temp"],
                 stakeholders: "SNCF Réseau, SNCF Gares & Connexions, SOLIDEO (Olympia-Infrastrukturgesellschaft), Alstom, CAF.",
                 opportunities: "Gebirgsbahnen mit starken Steigungen und Minustemperaturen verlangen mechanisch und thermisch exzellente Antriebe. TSA besitzt jahrzehntelange Erfahrung bei Spezialantrieben und kann sich über Alstom/CAF für die Nachtzug- und Regionalbahnflotten exzellent platzieren.",
                 hook: "325 Millionen Euro für 280 km Gebirgsbahn: Wie die Modernisierung der Alpenstrecke Aix-en-Provence–Briançon die nachhaltige Zukunft des Bergtourismus sichert."
@@ -370,8 +416,12 @@
                 score: 9.0,
                 metrics: { tech: 9, access: 9, volume: 9, safety: 9 },
                 problems: "Erste transkontinentale WM (Europa/Afrika) erfordert beispiellose logistische Synchronisierung. Teams und Fans pendeln hochfrequent zwischen Metropolen wie Madrid, Lissabon und Casablanca. Große Seehäfen und Flughäfen müssen drastisch erweitert werden.",
-                infrastructure:,
-                relevance:,
+                infrastructure: [
+                    "Marokkanisches HSR-Projekt Kenitra-Marrakesch (320 km/h)",
+                    "Erweiterung der Metrosysteme in Madrid, Barcelona und Lissabon",
+                    "Ausbau der Anbindungen großer Frachthäfen (z. B. Tanger-Med) mit elektrischen Rangierloks"
+                ],
+                relevance: ["High-Speed", "Metro", "Port-Vehicles", "Hot-Climate"],
                 stakeholders: "Marokkanisches Ministerium für Ausrüstung & Wasser, ONCF (Staatsbahn Marokko), RENFE (Spanien), CP (Portugal), Alstom, CAF, Talgo.",
                 opportunities: "Gigantische Neubaulinien für HSR und schwere Hafenelektromobilität. TSA hat hervorragende Lieferchancen für Hochleistungs-Traktionsmotoren und Getriebe über OEMs (Alstom/CAF) sowie für Schwerlast-Logistikfahrzeuge in den neuen Megahäfen.",
                 hook: "Ein 100-Milliarden-Dollar-Infrastrukturprogramm verbindet Europa und Afrika: Marokkos gigantische Schienen- und Hafenoffensive für die WM 2030."
@@ -385,43 +435,214 @@
                 score: 9.2,
                 metrics: { tech: 10, access: 8, volume: 9, safety: 10 },
                 problems: "Sicherung eines fehlerfreien ÖPNV-Massenstroms in einer rasant wachsenden Wüstenmetropole bei extremen Klimabedingungen (Sand, Hitze über 45 °C). Besucher müssen voll klimatisiert in nur 10 Minuten vom Flughafen zur Weltausstellung gelangen.",
-                infrastructure:,
-                relevance:,
+                infrastructure: [
+                    "Neubau einer fahrerlosen Express-Metrolinie direkt zum Expo-Gelände",
+                    "Große Flottenerweiterungen des Riad-Busnetzwerks",
+                    "Einsatz autonomer, staubgeschützter Shuttles und Vorfeldfahrzeuge"
+                ],
+                relevance: ["Metro", "E-Bus", "Airport", "Sand-Resistant", "DACS"],
                 stakeholders: "Royal Commission for Riyadh City (RCRC), Expo 2030 Riyadh Company, Nesma & Partners, Al Yamama Company, Siemens, Alstom, CRRC.",
                 opportunities: "Die extreme Wüstenhitze schließt Billiganbieter aus. TSA besitzt mit dem patentierten DACS-Kühlsystem und der TSADUR-Klasse-220-Isolierung zwei unschlagbare Alleinstellungsmerkmale für diese Ausschreibungen über Siemens/Alstom.",
-                hook: "Vom Flugzeug zur Expo in 10 Minuten: Wie die fahrerlose Metro Riad 42 Millionen Besucher bei Extremtemperaturen mitten durch die Wüste befördert."
+                hook: "Vom Flughafen zur Expo in 10 Minuten: Wie die fahrerlose Metro Riad 42 Millionen Besucher bei Extremtemperaturen mitten durch die Wüste befördert."
             }
         ];
 
-        const stakeholdersData =;
-
-        const postsData =;
-
-        const seriesData =
+        const stakeholdersData = [
+            {
+                name: "LA Metro (Los Angeles County Metropolitan Transportation Authority)",
+                type: "authority",
+                event: "Los Angeles 2028",
+                role: "Öffentlicher Auftraggeber für das Mega-Projekt 'Twenty-Eight by '28'. Steuert Budget von über 20 Milliarden USD.",
+                strategy: "Direkte Ansprache über Thought-Leadership bezüglich 'Buy America'-Konformität. TSA muss den OEMs (Siemens, New Flyer) nachweisen, dass die Antriebe vollständig in Somerville, NJ gefertigt werden können."
             },
             {
-                title: "Serie 2: Schienentransit unter Extrembedingungen",
-                target: "Nahverkehrsbetreiber in Wüstenregionen, OEMs im mittleren Osten, Schieneningenieure.",
-                message: "Konstruktive Bewältigung von Quarzstaub und thermischer Dauerlast über 45 °C im Schienenverkehr.",
-                posts:
+                name: "SNCF Réseau & SOLIDEO",
+                type: "operator",
+                event: "French Alps 2030",
+                role: "Infrastruktur- und Planungsgesellschaft für die nachhaltigen Schienenzubringer in den alpinen Regionen Frankreichs.",
+                strategy: "Frühzeitiges Engineering-Consulting. Aufzeigen von Referenzen aus der Schweiz und Österreich bezüglich thermischer Resilienz von Getrieben und Radsatzmotoren bei extremen Steigungen und Kälte."
+            },
+            {
+                name: "Alstom Group & CAF",
+                type: "oem",
+                event: "Mailand 2026 / Winter 2030 / WM 2030",
+                role: "Führende europäische Schienenfahrzeughersteller, Großlieferanten für Metros, Straßenbahnen und High-Speed-Züge.",
+                strategy: "Engste technische Abstimmung im Rahmen von Ausschreibungen. TSA agiert als technologischer Integrationspartner für hocheffiziente PMSM-Motoren und Getriebe."
+            },
+            {
+                name: "Wrightbus & Alexander Dennis Ltd.",
+                type: "oem",
+                event: "UEFA Euro 2028",
+                role: "Führende britische Bushersteller, Pioniere im Bereich emissionsfreier Elektro- und Wasserstoff-Doppelstockbusse.",
+                strategy: "Präsentation des kompakten TSA-E-Bus-Antriebsstrangs für den städtischen Dauerbetrieb im dichten britischen Linksverkehr unter extremen Stop-and-Go-Bedingungen."
+            },
+            {
+                name: "ONCF (Office National des Chemins de Fer Maroc)",
+                type: "operator",
+                event: "FIFA World Cup 2030",
+                role: "Marokkanische Staatsbahn, Betreiber des Hochgeschwindigkeitsnetzes 'Al Boraq' und Hauptentscheider für HSR-Ausschreibungen.",
+                strategy: "Partnerschaftliche Positionierung mit europäische Konsortien. Fokus auf die nachgewiesene Heißland-Tauglichkeit der TSA-Traktionsmotoren."
+            }
+        ];
+
+        const postsData = [
+            {
+                title: "Post 1: Der 'Car-Free'-Stresstest für LA 2028",
+                category: "road",
+                text: "Kann eine Auto-Metropole wie Los Angeles 'Car-Free Games' austragen?\n\nDas offizielle Ziel für LA 2028 ist ambitioniert: Null Zuschauer-Pkw an den Spielstätten. Das bedeutet 1 Million zusätzliche Fahrten pro Tag im ÖPNV. Ein logistischer Gigantismus!\n\nFür uns bei TSA bedeutet dies: E-Busse und Metros müssen mit 100%iger Zuverlässigkeit im Dauer-Stresstest laufen. Unsere Antwort: Hocheffiziente Antriebssysteme, die über unsere Niederlassung in Somerville, NJ produziert werden – vollkommen 'Buy America' konform.\n\nWie bereiten Sie Ihre Flotten vor?\n\n#LAMetro #LA2028 #EMobility #ElectricBus #BuyAmerica #TSA"
+            },
+            {
+                title: "Post 2: 74 neue Stadler Tramlink Trams für Mailand",
+                category: "rail",
+                text: "Mailand macht sich bereit für die Olympischen Winterspiele Milano Cortina 2026.\n\nMit 74 neuen Stadler TRAMLINK Straßenbahnen setzt die italienische Modemetropole auf grüne Mobilität. Ein zentrales Kriterium: Drastische Lärmreduzierung im historischen Zentrum.\n\nAls Antriebspartner liefert TSA die maßgeschneiderten, kompakten Radsatzgetriebe. Durch optimierte Verzahnungsgeometrien und vibrationsarme Bauweise sorgen wir dafür, dass die Fans leise und komfortabel ans Ziel kommen.\n\n#MilanoCortina2026 #Tramlink #Stadler #Radsatzgetriebe #Schienenverkehr #TSA"
+            },
+            {
+                title: "Post 3: After-Sales als unsichtbarer Held bei WM 2026",
+                category: "service",
+                text: "6 Millionen Fans. 16 Städte. 3 Länder. Die FIFA WM 2026 wird die größte Belastungsprobe, die der nordamerikanische Nahverkehr je gesehen hat.\n\nWenn alternde Flotten plötzlich unter Volllast laufen müssen, entscheidet nicht nur der Neukauf, sondern der After-Sales-Service über den Erfolg.\n\nTSA bietet herstellerunabhängiges Retrofit und Modernisierung für Bestandsflotten. Über unsere US-Präsenz sichern wir schnelle Reaktionszeiten und die Langlebigkeit kritischer Antriebskomponenten.\n\n#FIFA2026 #Transit #AfterSales #Retrofit #Instandhaltung #TSA"
+            },
+            {
+                title: "Post 4: DACS vs. Wüstenhitze bei Expo 2030 Riad",
+                category: "cooling",
+                text: "42 Millionen Besuche bei über 45 °C im Schatten. Das ist die Realität der Expo 2030 in Riad, Saudi-Arabien.\n\nWie kühlt man Traktionsmotoren zuverlässig, wenn die Umgebungsluft bereits extrem heiß ist und Quarzsand herkömmliche Filter verstopft?\n\nUnsere Antwort ist das patentierte DACS (Direct Air Cooling System). Durch die direkte Luftkühlung ohne verschleißanfällige Flüssigkeitskreisläufe bieten wir die robusteste Lösung für extremste Wüstenbedingungen.\n\n#Riyadh2030 #Expo2030 #DACS #Wüstenkühlung #Engineering #TSA"
+            },
+            {
+                title: "Post 5: Warum der britische E-Bus-Markt boomt",
+                category: "road",
+                text: "Die UEFA Euro 2028 im Vereinigten Königreich und Irland hat eine klare ÖPNV-Quote ausgegeben: Über 80% aller Ticketinhaber sollen emissionsfrei anreisen.\n\nDas beschleunigt den Übergang zu E-Bussen drastisch. Hersteller wie Wrightbus und Alexander Dennis setzen Maßstäbe.\n\nTSA treibt diese Transformation mit hocheffizienten Permanentmagnetmotoren voran, die speziell für den rauen städtischen Doppelstock-Einsatz konzipiert sind.\n\n#Euro2028 #Wrightbus #EBus #DoubleDecker #CleanTransit #TSA"
+            },
+            {
+                title: "Post 6: Hochgeschwindigkeit auf Schienen: WM 2030",
+                category: "rail",
+                text: "Ein Schienennetz, das Kontinente verbindet. Marokkos Investitionen von über 100 Milliarden Dollar für die FIFA WM 2030 umfassen die Erweiterung der High-Speed-Strecke Kenitra-Marrakesch auf bis zu 320 km/h.\n\nBei diesen Geschwindigkeiten wirken extreme Flieh- und Thermalkräfte auf die Motoren und Getriebe.\n\nTSA entwickelt Hochleistungsantriebe, die maximale Zuverlässigkeit bei minimalem Verschleiß garantieren. Wir sind bereit für den transkontinentalen Transit.\n\n#WorldCup2030 #ONCF #HighSpeedRail #Alstom #Marokko #TSA"
+            },
+            {
+                title: "Post 7: Obsoleszenzmanagement bei der S-Bahn Mailand",
+                category: "service",
+                text: "Wenn Ersatzteile für 25 Jahre alte Triebwagen nicht mehr lieferbar sind, droht der Stillstand. Pünktlich zu Milano Cortina 2026 dürfen keine Ausfälle passieren.\n\nTSA löst das Obsoleszenzproblem durch Reverse Engineering und maßgeschneiderte Nachbauten von historischen Fahrmotoren – mechanisch absolut kompatibel, thermisch modernisiert.\n\n#Obsoleszenz #SbahnMailand #Retrofit #Instandhaltung #Engineering #TSA"
+            },
+            {
+                title: "Post 8: TSADUR Klasse-220-Isolierung",
+                category: "cooling",
+                text: "Staub, Hitze, Sandstürme. Standard-Isolationsklassen stoßen im Nahen Osten an ihre physikalischen Grenzen.\n\nMit unserem patentierten TSADUR-Klasse-220-Isolationssystem bieten wir eine Durchschlagsfestigkeit, die auch unter extremen thermischen Überlastungen und Feuchtigkeit unbeeinträchtigt bleibt.\n\nIdeal für die anspruchsvollen Metrolinien und Vorfeldfahrzeuge der Expo 2030 in Riad.\n\n#TSADUR #MaterialScience #Isolierung #ExtremeConditions #SaudiArabia #TSA"
+            },
+            {
+                title: "Post 9: BRT-Systeme als Lebensretter für US-Städte",
+                category: "road",
+                text: "Bus Rapid Transit (BRT) ist der schnellste Weg, um vor Großereignissen Kapazitäten aufzubauen. Zur FIFA WM 2026 setzen Städte wie Seattle und Atlanta massiv auf elektrifizierte BRT-Korridore.\n\nDer Vorteil: Geringere Infrastrukturkosten als Schienennetze bei vergleichbarer Förderleistung.\n\nDie elektrischen Gelenkbusse benötigen extrem drehmomentstarke Antriebe. TSA liefert die passenden Antriebseinheiten für die anspruchsvolle Topografie Seattles.\n\n#BRT #SeattleTransit #EBus #EMobility #WM2026 #TSA"
+            },
+            {
+                title: "Post 10: Schienenresilienz in den französischen Alpen 2030",
+                category: "rail",
+                text: "Keine neuen Parkplätze an den Skipisten! Die französischen Alpen 2030 setzen voll auf schienengebundene Anreise für die Olympischen Winterspiele.\n\nDas bedeutet: Eingleisige Gebirgsbahnen müssen im Minutentakt extreme Steigungen bei eisigen Temperaturen bewältigen.\n\nTSA-Antriebe sind in den Alpen zu Hause. Unsere Zahnrad- und Reibungsantriebe bewähren sich seit Jahrzehnten unter härtesten Winterbedingungen.\n\n#FrenchAlps2030 #WinterOlympics #Gebirgsbahn #SNCF #AlpineTech #TSA"
+            },
+            {
+                title: "Post 11: Airport Shuttles: Der erste Eindruck zählt",
+                category: "road",
+                text: "Der erste Berührungspunkt für Millionen WM- und Expo-Gäste ist der Flughafen. Effiziente, emissionsfreie Airport Shuttles und Automated People Mover (APM) sind die Visitenkarte einer Host City.\n\nTSA liefert hochkompakte, geräuscharme Antriebslösungen für fahrerlose Kabinenbahnen und elektrische Vorfeldbusse.\n\nSo beginnt die klimaneutrale Anreise direkt am Gate.\n\n#AirportTransit #APM #AirportShuttle #SmartCity #AviationDecarbonization #TSA"
+            },
+            {
+                title: "Post 12: Die Renaissance des Nachtzugs in Europa",
+                category: "rail",
+                text: "Im Vorfeld der sportlichen Mega-Events 2026 bis 2030 erlebt der Nachtzug in Europa eine beispiellose Renaissance. Fans wollen nachhaltig über Grenzen hinweg reisen.\n\nFür Betreiber bedeutet dies: Extrem lange Laufleistungen ohne ungeplante Wartungsintervalle.\n\nTSAs bewährte Asynchronmotoren und Radsatzgetriebe sind für diese Dauerläufe konstruiert – leise im Fahrgastraum, unermüdlich im Drehgestell.\n\n#Nightjet #Nachtzug #NachhaltigesReisen #Schienenverkehr #SNCF #OBB #TSA"
+            },
+            {
+                title: "Post 13: Local Content als Schlüssel für globale Ausschreibungen",
+                category: "service",
+                text: "Ausschreibungen im US-Nahverkehr verlangen oft bis zu 70% oder mehr 'Local Content'. Ohne lokale Wertschöpfung ist kein B2B-Erfolg möglich.\n\nMit unserer Tochtergesellschaft Traction Systems Inc. in Somerville, New Jersey, haben wir bei TSA die perfekte Brücke gebaut.\n\nWir vereinen österreichisches Engineering mit US-amerikanischer Produktion, um den reibungslosen Ausbau der Netze für LA 2028 zu garantieren.\n\n#BuyAmerica #SomervilleNJ #LocalContent #USAInfrastruktur #TransitB2B #TSA"
+            },
+            {
+                title: "Post 14: Effizienzsteigerung durch Permanentmagnettechnologie",
+                category: "cooling",
+                text: "Jedes Prozent Energieeinsparung zählt, wenn Verkehrsbetriebe hunderte neue Fahrzeuge anschaffen. Zur Euro 2028 im UK steht Energieeffizienz ganz oben auf der Agenda.\n\nUnsere Permanentmagnetmotoren (PMSM) bieten signifikante Effizienzvorteile im Teillastbereich von Stadtbussen und Trams im Vergleich zu klassischen Asynchronmaschinen.\n\nDas schont das Budget der Verkehrsbetriebe und die Umwelt.\n\n#PMSM #Energieeffizienz #GreenTransit #UKEuro2028 #Technologie #TSA"
+            },
+            {
+                title: "Post 15: Das Lima-Ica Schnellbahnprojekt (Peru)",
+                category: "rail",
+                text: "Ein 6,5-Milliarden-Dollar-Projekt mitten durch die peruanische Küstenwüste. Das Lima-Ica-Schnellbahnprojekt soll pünktlich zu den Panamerikanischen Spielen 2027 fertiggestellt werden.\n\nDie größte Herausforderung: Extremer Feinstaub, Sandabrieb und salzige Luft.\n\nTSA liefert hermetisch abgedichtete Getriebegehäuse und speziell beschichtete Fahrmotoren, die den härtesten Umwelteinflüssen Lateinamerikas standhalten.\n\n#LimaIca #PeruMobility #PanAm2027 #DesertRail #EngineeringResilience #TSA"
+            },
+            {
+                title: "Post 16: Schienenersatzverkehr elektrifizieren",
+                category: "road",
+                text: "Während der Großereignisse kommt es unweigerlich zu Sperrungen und ungeplanten Zwischenfällen. Ein robuster, schnell einsatzbereiter Schienenersatzverkehr (SEV) ist essenziell.\n\nElektro-Gelenkbusse, angetrieben von TSA-Motoren, fangen diese Spitzen CO₂-neutral auf und sichern den nahtlosen Transport der Fans.\n\n#SEV #Schienenersatzverkehr #SmartTransit #CrisisManagement #EMobility #TSA"
+            },
+            {
+                title: "Post 17: Die Rolle von Standardisierung im modernen Fahrzeugbau",
+                category: "service",
+                text: "Sonderanfertigungen verlängern Lieferzeiten und erhöhen Kosten. In der heißen Vorbereitungsphase auf LA 2028 ist Zeit jedoch Mangelware.\n\nTSA setzt auf modulare Plattformkonzepte für Traktionsmotoren und Getriebe. Dadurch reduzieren wir die Entwicklungszeiten für OEMs drastisch und sichern schnelle Time-to-Market-Zyklen.\n\n#Standardisierung #ModularesDesign #Fahrzeugbau #OEM #SupplyChain #TSA"
+            },
+            {
+                title: "Post 18: Wasserstoff- vs. Batteriebusse für den Event-Transit",
+                category: "road",
+                text: "Welche Technologie gewinnt das Rennen auf der Straße? Bei der Euro 2028 im UK sehen wir eine Koexistenz von Batterie- und Wasserstoff-Bussen.\n\nTSA-Antriebslösungen sind technologieoffen. Ob Brennstoffzelle oder Batterie: Unser Traktionsmotor wandelt die elektrische Energie hocheffizient in mechanischen Vortrieb um.\n\n#Wasserstoff #BatteryElectric #ZeroEmission #UKTransit #Innovation #TSA"
+            },
+            {
+                title: "Post 19: Digitalisierung im Drehgestell: Predictive Maintenance",
+                category: "service",
+                text: "Ein Ausfall während des WM-Halbfinales? Ein Albtraum für jeden Verkehrsbetrieb.\n\nDurch die Integration intelligenter Sensorik direkt in den TSA-Antriebsstrang ermöglichen wir Predictive Maintenance. Temperatur- und Vibrationsdaten werden in Echtzeit analysiert, um Schäden zu verhindern, bevor sie entstehen.\n\n#PredictiveMaintenance #IoT #SmartRail #Digitalisierung #Sicherheit #TSA"
+            },
+            {
+                title: "Post 20: 60 Jahre Expertise für die Mobilität von morgen",
+                category: "rail",
+                text: "Großereignisse kommen und gehen, doch die Infrastruktur bleibt für Generationen bestehen.\n\nSeit Jahrzehnten entwickelt TSA bahnbrechende Traktionssysteme in Österreich. Unsere Erfahrung fließt in jedes Projekt ein – von den Winterspielen 2026 bis zur Weltausstellung 2030.\n\nWir bauen die Antriebe für die Mobilität von morgen.\n\n#History #Expertise #Engineering #MadeInAustria #SustainableMobility #TSA"
+            }
+        ];
+
+        const seriesData = [
+            {
+                title: "Serie 1: Die 'Car-Free Games' von Los Angeles – Mythos oder machbar?",
+                target: "US-Transit-Behörden (APTA), amerikanische OEMs, städtische Infrastrukturplaner.",
+                message: "Wie Los Angeles mit der Initiative 'Twenty-Eight by '28' das Pkw-Paradigma bricht und TSA als 'Buy America'-konformer Partner die notwendigen Antriebe liefert.",
+                posts: [
+                    "Post 1: Das ambitionierte Ziel – Warum LA 2028 autofrei werden MUSS.",
+                    "Post 2: Schiene vs. Straße – Welche Netze die Hauptlast tragen werden.",
+                    "Post 3: Local Content – Wie TSA die strengen Buy-America-Kriterien sichert.",
+                    "Post 4: Das Erbe nach den Spielen – Wie LA nachhaltig transformiert wird."
+                ]
+            },
+            {
+                title: "Serie 2: Schienentransit unter Extrembedingungen – Wüste, Hitze und Quarzstaub",
+                target: "Nahverkehrsbetreiber in Wüstenregionen, OEMs im Mittleren Osten, Schieneningenieure.",
+                message: "Konstruktive Bewältigung von Quarzstaub und thermischer Dauerlast über 45 °C im Schienenverkehr durch DACS und TSADUR.",
+                posts: [
+                    "Post 1: Der physikalische Feind – Wie Sand und Hitze Fahrmotoren zerstören.",
+                    "Post 2: Das DACS-Kühlsystem – Direkte Luftkühlung ohne Filter-Verstopfung.",
+                    "Post 3: Isolationsklasse 220 – Warum TSADUR die Lebensdauer verdoppelt.",
+                    "Post 4: Fallstudie Riad – Metro-Zubringer für die Expo 2030."
+                ]
             },
             {
                 title: "Serie 3: Alpin-Resilienz – Schienenverkehr in dünner Luft",
                 target: "Betreiber von Gebirgsbahnen, europäische Schienen-OEMs, SNCF-Infrastrukturplaner.",
-                message: "Engineering für Schienenfahrzeuge auf steilen, topografisch schwierigen und winterlichen Gebirgsstrecken.",
-                posts:
+                message: "Herausragendes Engineering für Schienenfahrzeuge auf steilen, topografisch schwierigen und winterlichen Gebirgsstrecken.",
+                posts: [
+                    "Post 1: Die Herausforderung Steigung – Zahnrad- vs. Adhäsionsantriebe.",
+                    "Post 2: Eiseskälte und Schneeverwehungen – Schutz vor Feuchtigkeitseintritt im Motor.",
+                    "Post 3: Milano Cortina & French Alps – Die nachhaltige Erschließung sensibler Ökosysteme.",
+                    "Post 4: Bremsenergie-Rückspeisung – Effizienzgewinne bei der Talfahrt."
+                ]
             },
             {
-                title: "Serie 4: Die USA-Infrastrukturoffensive: 'Twenty-Eight by '28' im B2B-Check",
-                target: "US Transit Authorities (APTAs), amerikanische Schienen- und Bus-OEMs, Verkehrsplaner.",
-                message: "Wie Los Angeles vor den Spielen 2028 den Sprung zur schienen- und busbasierten Megacity vollzieht und TSA als US-Schlüsselpartner agiert.",
-                posts:
-            },
-            {
-                title: "Serie 5: Die unsichtbaren Helden des Großereignis-Transits (Service-Fokus)",
+                title: "Serie 4: Die unsichtbaren Helden des Großereignis-Transits (Service-Fokus)",
                 target: "Instandhaltungsleiter, Service-Ingenieure, CFOs von Verkehrsbetrieben.",
-                message: "Die kritische Bedeutung von After-Sales, Retrofits und System-Upgrades zur Gewährleistung maximaler Flottenverfügbarkeit.",
-                posts:
+                message: "Die kritische Bedeutung von herstellerunabhängigem After-Sales, Retrofits und System-Upgrades zur Gewährleistung maximaler Flottenverfügbarkeit.",
+                posts: [
+                    "Post 1: Stresstest Großereignis – Warum alte Flotten jetzt modernisiert werden müssen.",
+                    "Post 2: Herstellerunabhängigkeit – Schnelle Hilfe ohne OEM-Monopol.",
+                    "Post 3: Reverse Engineering – Neue Leistung in alten Gehäusen.",
+                    "Post 4: Predictive Maintenance – Ausfälle verhindern, bevor die Fans ankommen."
+                ]
+            },
+            {
+                title: "Serie 5: emissionsfreier Straßentransit – Die Elektrifizierung der Busflotten",
+                target: "E-Bus-Hersteller, Verkehrsbetriebe, städtische Umweltbeauftragte.",
+                message: "Wie hocheffiziente Permanentmagnetmotoren (PMSM) von TSA den städtischen Busverkehr revolutionieren und dichte Taktungen bei Events ermöglichen.",
+                posts: [
+                    "Post 1: Der städtische Stop-and-Go – Warum E-Busse im Event-Verkehr glänzen.",
+                    "Post 2: PMSM vs. Asynchron – Der technologische Vergleich im Teillastbereich.",
+                    "Post 3: Euro 2028 & LA 2028 – Die massiven Beschaffungswellen auf der Straße.",
+                    "Post 4: Integration in den Antriebsstrang – Kompakt, leicht, geräuscharm."
+                ]
             }
         ];
 
@@ -449,7 +670,7 @@
             2030: {
                 title: "2030: Saudi-Arabien Wüstenkühlung & Marokko Ports Strategy",
                 focus: "Wüsten-Kompaktheit & Schwere Logistikantriebe",
-                desc: "Platzierung des DACS-Kühlsystems und der TSADUR-Klasse-220-Isolierung als einziger sicherer Standard für Riad 2030. Akquisition im Road-Sektor für schwere elektrische Terminalzugmaschinen und Logistikfahrzeuge im Rahmen der marokkanischen Seehafenerweiterungen."
+                desc: "Platzierung des DACS-Kühlsystem und der TSADUR-Klasse-220-Isolierung als einziger sicherer Standard für Riad 2030. Akquisition im Road-Sektor für schwere elektrische Terminalzugmaschinen und Logistikfahrzeuge im Rahmen der marokkanischen Seehafenerweiterungen."
             },
             2031: {
                 title: "2031: Ausblick auf Saudi-Arabien WM 2034 & Hyperloop-Forschung",
@@ -467,15 +688,15 @@
             eventsData.forEach((event, idx) => {
                 const isSelected = event.id === 1;
                 const activeClasses = isSelected 
-                   ? 'bg-tsaBlue text-white border-tsaBlue shadow-md' 
+                    ? 'bg-tsaBlue text-white border-tsaBlue shadow-md' 
                     : 'bg-white text-appleGray-800 border-appleGray-100 hover:border-appleGray-200';
                 
-                const scoreBg = isSelected? 'bg-white/20 text-white' : 'bg-tsaBlue-muted text-tsaBlue';
+                const scoreBg = isSelected ? 'bg-white/20 text-white' : 'bg-tsaBlue-muted text-tsaBlue';
 
                 container.innerHTML += `
                     <div onclick="selectEvent(${event.id}, this)" class="event-nav-item cursor-pointer p-4 rounded-xl border transition-all duration-200 ${activeClasses}" data-id="${event.id}">
                         <div class="flex justify-between items-center">
-                            <span class="text-xs font-semibold uppercase tracking-wider ${isSelected? 'text-white/80' : 'text-appleGray-200'}">${event.year} | ${event.location.split(',')}</span>
+                            <span class="text-xs font-semibold uppercase tracking-wider ${isSelected ? 'text-white/80' : 'text-appleGray-200'}">${event.year} | ${event.location.split(',')[0]}</span>
                             <span class="text-xs font-bold px-2 py-0.5 rounded-full ${scoreBg}">Relevanz: ${event.score.toFixed(1)}</span>
                         </div>
                         <h3 class="font-bold text-sm mt-1 tracking-tight">${event.name}</h3>
@@ -590,7 +811,7 @@
         let currentSortCol = 7; // Weighted Score default
 
         function sortTable(colIdx) {
-            currentSortDirection =!currentSortDirection;
+            currentSortDirection = !currentSortDirection;
             currentSortCol = colIdx;
             renderScoringTable();
         }
@@ -600,20 +821,20 @@
             tbody.innerHTML = '';
 
             // Clone to avoid mutating original
-            let sortedEvents =;
+            let sortedEvents = [...eventsData];
 
             sortedEvents.sort((a, b) => {
                 let valA, valB;
                 switch (currentSortCol) {
                     case 0: // Rang (based on final weighted score actually)
                         valA = a.score; valB = b.score;
-                        return currentSortDirection? valB - valA : valA - valB;
+                        return currentSortDirection ? valB - valA : valA - valB;
                     case 1: // Name
                         valA = a.name; valB = b.name;
-                        return currentSortDirection? valA.localeCompare(valB) : valB.localeCompare(valA);
+                        return currentSortDirection ? valA.localeCompare(valB) : valB.localeCompare(valA);
                     case 2: // Ort / Jahr
                         valA = a.year; valB = b.year;
-                        return currentSortDirection? valA.localeCompare(valB) : valB.localeCompare(valA);
+                        return currentSortDirection ? valA.localeCompare(valB) : valB.localeCompare(valA);
                     case 3: // Tech
                         valA = a.metrics.tech; valB = b.metrics.tech;
                         break;
@@ -630,7 +851,7 @@
                         valA = a.score; valB = b.score;
                         break;
                 }
-                return currentSortDirection? valB - valA : valA - valB;
+                return currentSortDirection ? valB - valA : valA - valB;
             });
 
             sortedEvents.forEach((event, idx) => {
@@ -639,7 +860,7 @@
                     <tr class="hover:bg-appleGray-50/50 transition">
                         <td class="py-4 px-6 font-bold text-appleGray-900 text-xs">${rang}</td>
                         <td class="py-4 px-6 font-semibold text-appleGray-900 text-xs">${event.name}</td>
-                        <td class="py-4 px-6 text-appleGray-200 text-xs">${event.location.split(',')} (${event.year})</td>
+                        <td class="py-4 px-6 text-appleGray-200 text-xs">${event.location.split(',')[0]} (${event.year})</td>
                         <td class="py-4 px-4 text-center text-xs font-semibold">${event.metrics.tech}</td>
                         <td class="py-4 px-4 text-center text-xs font-semibold">${event.metrics.access}</td>
                         <td class="py-4 px-4 text-center text-xs font-semibold">${event.metrics.volume}</td>
@@ -668,7 +889,7 @@
             container.innerHTML = '';
 
             const filtered = activeStakeholderFilter === 'all' 
-               ? stakeholdersData 
+                ? stakeholdersData 
                 : stakeholdersData.filter(s => s.type === activeStakeholderFilter);
 
             filtered.forEach(s => {
@@ -717,7 +938,7 @@
             container.innerHTML = '';
 
             const filtered = activePostFilter === 'all'
-               ? postsData
+                ? postsData
                 : postsData.filter(p => p.category === activePostFilter);
 
             filtered.forEach(p => {
