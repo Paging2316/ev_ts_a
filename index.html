@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSA Strategic B2B Mobility Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        appleGray: {
+                            50: '#f5f5f7',
+                            100: '#e8e8ed',
+                            200: '#d2d2d7',
+                            800: '#1d1d1f',
+                            900: '#000000'
+                        },
+                        tsaBlue: {
+                            DEFAULT: '#0066cc',
+                            light: '#0071e3',
+                            dark: '#004499',
+                            muted: '#e8f2ff'
+                        }
+                    },
+                    fontFamily: {
+                        sans:,
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for clean apple look */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f5f5f7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d2d2d7;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #86868b;
+        }
+       .backdrop-blur-apple {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-appleGray-50 text-appleGray-800 font-sans antialiased selection:bg-tsaBlue-muted selection:text-tsaBlue">
+
+    <header class="sticky top-0 z-50 w-full border-b border-appleGray-100 bg-white/80 backdrop-blur-apple">
+        <div class="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-tsaBlue flex items-center justify-center text-white font-black text-sm tracking-tighter">TSA</div>
+                <div class="flex flex-col">
+                    <span class="text-sm font-bold tracking-tight text-appleGray-900">TRAKTIONSSYSTEME AUSTRIA</span>
+                    <span class="text-[10px] text-appleGray-200 font-semibold tracking-wider uppercase -mt-0.5">B2B Mobility Hub</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="#overview" class="text-appleGray-800 hover:text-tsaBlue transition">Übersicht</a>
+                <a href="#events" class="text-appleGray-800 hover:text-tsaBlue transition">Mega-Events</a>
+                <a href="#scoring" class="text-appleGray-800 hover:text-tsaBlue transition">Scoring-Matrix</a>
+                <a href="#stakeholders" class="text-appleGray-800 hover:text-tsaBlue transition">Stakeholder</a>
+                <a href="#linkedin" class="text-appleGray-800 hover:text-tsaBlue transition">LinkedIn Hub</a>
+                <a href="#timeline" class="text-appleGray-800 hover:text-tsaBlue transition">Roadmap</a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <span class="text-xs font-semibold bg-appleGray-100 px-3 py-1.5 rounded-full border border-appleGray-200">B2B Strategy: 2026 – 2031</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-6 py-8 space-y-12">
+
+        <section id="overview" class="space-y-6 pt-4">
+            <div class="text-center md:text-left space-y-2">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-appleGray-900">Mega-Events als B2B-Wachstumstreiber</h1>
+                <p class="text-lg text-appleGray-200 max-w-3xl">
+                    Strategisches Intelligence-Portal zur herstellerunabhängigen Markt- und Kommunikationsdurchdringung im globalen Schienen- und Straßentransit.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-appleGray-100 shadow-sm flex flex-col justify-between space-y-3">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-appleGray-200">Zielereignisse</span>
+                    <div class="flex items-baseline space-x-2">
+                        <span class="text-3xl font-bold tracking-tight">10</span>
+                        <span class="text-sm font-medium text-green-600">Top-Priorisiert</span>
+                    </div>
+                    <p class="text-xs text-appleGray-200">Globale Leuchtturmprojekte von Nordamerika bis zum Nahen Osten.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-appleGray-100 shadow-sm flex flex-col justify-between space-y-3">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-appleGray-200">Marktpotenzial</span>
+                    <div class="flex items-baseline space-x-2">
+                        <span class="text-3xl font-bold tracking-tight">>150 Mrd. $</span>
+                    </div>
+                    <p class="text-xs text-appleGray-200">Summiertes Infrastrukturvolumen der verknüpften Ausschreibungen.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-appleGray-100 shadow-sm flex flex-col justify-between space-y-3">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-appleGray-200">Core Technologie</span>
+                    <div class="flex items-baseline space-x-2">
+                        <span class="text-3xl font-bold tracking-tight">DACS / PMSM</span>
+                    </div>
+                    <p class="text-xs text-appleGray-200">Wüstenkühlung & hocheffiziente Permanentmagnetmotoren.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-appleGray-100 shadow-sm flex flex-col justify-between space-y-3">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-appleGray-200">U.S. Local-Content</span>
+                    <div class="flex items-baseline space-x-2">
+                        <span class="text-3xl font-bold tracking-tight">100%</span>
+                        <span class="text-xs font-semibold bg-blue-100 text-tsaBlue px-2 py-0.5 rounded-full">Buy America</span>
+                    </div>
+                    <p class="text-xs text-appleGray-200">Gesichert über die TSA-Niederlassung Somerville, New Jersey.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="space-y-6">
+            <div class="border-b border-appleGray-100 pb-4">
+                <h2 class="text-2xl font-bold tracking-tight text-appleGray-900">Interactive Event Explorer</h2>
+                <p class="text-sm text-appleGray-200">Wähle ein Mega-Event, um B2B-Herausforderungen, Ausschreibungspotenziale und strategische Positionierungen im Detail zu analysieren.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <div class="lg:col-span-4 space-y-2 h-[550px] overflow-y-auto pr-2" id="eventListContainer">
+                    </div>
+
+                <div class="lg:col-span-8 bg-white p-8 rounded-3xl border border-appleGray-100 shadow-sm space-y-6 transition-all duration-300" id="eventDetailContainer">
+                    </div>
+            </div>
+        </section>
+
+        <section id="scoring" class="space-y-6">
+            <div class="border-b border-appleGray-100 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold tracking-tight text-appleGray-900">Strategisches Scoring & Priorisierung</h2>
+                    <p class="text-sm text-appleGray-200">Interaktive Bewertung aller Mega-Events basierend auf technologischer Eignung, Marktzugang und Realisierbarkeit.</p>
+                </div>
+                <div class="flex items-center space-x-2 text-xs text-appleGray-200">
+                    <span class="inline-block w-2 h-2 rounded-full bg-tsaBlue"></span>
+                    <span>Klicke auf Spaltenüberschriften zum Sortieren</span>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-appleGray-100 bg-white">
+                <table class="w-full text-left text-sm" id="scoringTable">
+                    <thead class="bg-appleGray-50 text-xs text-appleGray-200 uppercase tracking-wider border-b border-appleGray-100">
+                        <tr>
+                            <th class="py-4 px-6 font-bold cursor-pointer hover:bg-appleGray-100 transition" onclick="sortTable(0)">Rang</th>
+                            <th class="py-4 px-6 font-bold cursor-pointer hover:bg-appleGray-100 transition" onclick="sortTable(1)">Mega-Event</th>
+                            <th class="py-4 px-6 font-bold cursor-pointer hover:bg-appleGray-100 transition" onclick="sortTable(2)">Ort / Jahr</th>
+                            <th class="py-4 px-4 font-bold cursor-pointer hover:bg-appleGray-100 text-center transition" onclick="sortTable(3)">Tech-Match (30%)</th>
+                            <th class="py-4 px-4 font-bold cursor-pointer hover:bg-appleGray-100 text-center transition" onclick="sortTable(4)">Marktzugang (30%)</th>
+                            <th class="py-4 px-4 font-bold cursor-pointer hover:bg-appleGray-100 text-center transition" onclick="sortTable(5)">Volumen (20%)</th>
+                            <th class="py-4 px-4 font-bold cursor-pointer hover:bg-appleGray-100 text-center transition" onclick="sortTable(6)">Sicherheit (20%)</th>
+                            <th class="py-4 px-6 font-bold cursor-pointer hover:bg-appleGray-100 text-right text-tsaBlue transition" onclick="sortTable(7)">Weighted Score</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-appleGray-100" id="scoringTableBody">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="stakeholders" class="space-y-6">
+            <div class="border-b border-appleGray-100 pb-4">
+                <h2 class="text-2xl font-bold tracking-tight text-appleGray-900">B2B-Stakeholder-Verknüpfung</h2>
+                <p class="text-sm text-appleGray-200">Die wichtigsten Entscheidungsträger, Betreiber und Fahrzeughersteller und der Einflussweg von TSA.</p>
+            </div>
+
+            <div class="flex space-x-2 border-b border-appleGray-100 pb-px overflow-x-auto">
+                <button onclick="filterStakeholders('all')" id="tab-all" class="px-4 py-2 text-sm font-semibold border-b-2 border-tsaBlue text-tsaBlue transition">Alle Akteure</button>
+                <button onclick="filterStakeholders('authority')" id="tab-authority" class="px-4 py-2 text-sm font-medium border-b-2 border-transparent text-appleGray-200 hover:text-appleGray-800 transition">Verkehrsbehörden</button>
+                <button onclick="filterStakeholders('oem')" id="tab-oem" class="px-4 py-2 text-sm font-medium border-b-2 border-transparent text-appleGray-200 hover:text-appleGray-800 transition">OEMs / Hersteller</button>
+                <button onclick="filterStakeholders('operator')" id="tab-operator" class="px-4 py-2 text-sm font-medium border-b-2 border-transparent text-appleGray-200 hover:text-appleGray-800 transition">Betreiber / Infrastruktur</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="stakeholderContainer">
+                </div>
+        </section>
+
+        <section id="linkedin" class="space-y-8">
+            <div class="border-b border-appleGray-100 pb-4">
+                <h2 class="text-2xl font-bold tracking-tight text-appleGray-900">LinkedIn Content Hub & Post-Copier</h2>
+                <p class="text-sm text-appleGray-200">Erlesene, verkaufsfertige Thought-Leadership-Vorlagen mit strategischem Fokus. Filtere nach Thema und kopiere Entwürfe direkt.</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+                <button onclick="filterPosts('all')" id="p-all" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-tsaBlue text-white border border-tsaBlue transition">Alle Beiträge (20)</button>
+                <button onclick="filterPosts('road')" id="p-road" class="px-4 py-1.5 rounded-full text-xs font-medium bg-white text-appleGray-200 border border-appleGray-100 hover:border-appleGray-200 transition">Road & E-Bus</button>
+                <button onclick="filterPosts('rail')" id="p-rail" class="px-4 py-1.5 rounded-full text-xs font-medium bg-white text-appleGray-200 border border-appleGray-100 hover:border-appleGray-200 transition">Rail & Metro</button>
+                <button onclick="filterPosts('service')" id="p-service" class="px-4 py-1.5 rounded-full text-xs font-medium bg-white text-appleGray-200 border border-appleGray-100 hover:border-appleGray-200 transition">After-Sales & Retrofit</button>
+                <button onclick="filterPosts('cooling')" id="p-cooling" class="px-4 py-1.5 rounded-full text-xs font-medium bg-white text-appleGray-200 border border-appleGray-100 hover:border-appleGray-200 transition">Extreme Bedingungen (DACS/TSADUR)</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="postsContainer">
+                </div>
+
+            <div class="pt-6 space-y-4">
+                <h3 class="text-lg font-bold tracking-tight text-appleGray-900">5 Größere Content-Serien</h3>
+                <div class="space-y-3" id="seriesAccordion">
+                    </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="space-y-6">
+            <div class="border-b border-appleGray-100 pb-4">
+                <h2 class="text-2xl font-bold tracking-tight text-appleGray-900">Strategischer Zeitstrahl & Marktempfehlungen</h2>
+                <p class="text-sm text-appleGray-200">Visueller Meilensteinplan von 2026 bis 2031 für die Vertriebsplanung und Kommunikationsausrichtung der TSA.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border border-appleGray-100 shadow-sm space-y-8">
+                <div class="relative flex items-center justify-between max-w-4xl mx-auto">
+                    <div class="absolute left-0 right-0 top-1/2 h-0.5 bg-appleGray-100 -translate-y-1/2 z-0"></div>
+                    <div id="timelineProgress" class="absolute left-0 top-1/2 h-0.5 bg-tsaBlue -translate-y-1/2 z-0 transition-all duration-500" style="width: 0%;"></div>
+
+                    <button onclick="selectTimelineYear(2026, 0)" class="timeline-node relative z-10 w-10 h-10 rounded-full bg-white border-2 border-appleGray-200 flex items-center justify-center font-bold text-xs hover:border-tsaBlue focus:outline-none transition-all duration-300" id="tn-2026">26</button>
+                    <button onclick="selectTimelineYear(2027, 20)" class="timeline-node relative z-10 w-10 h-10 rounded-full bg-white border-2 border-appleGray-200 flex items-center justify-center font-bold text-xs hover:border-tsaBlue focus:outline-none transition-all duration-300" id="tn-2027">27</button>
+                    <button onclick="selectTimelineYear(2028, 40)" class="timeline-node relative z-10 w-10 h-10 rounded-full bg-white border-2 border-appleGray-200 flex items-center justify-center font-bold text-xs hover:border-tsaBlue focus:outline-none transition-all duration-300" id="tn-2028">28</button>
+                    <button onclick="selectTimelineYear(2029, 60)" class="timeline-node relative z-10 w-10 h-10 rounded-full bg-white border-2 border-appleGray-200 flex items-center justify-center font-bold text-xs hover:border-tsaBlue focus:outline-none transition-all duration-300" id="tn-2029">29</button>
+                    <button onclick="selectTimelineYear(2030, 80)" class="timeline-node relative z-10 w-10 h-10 rounded-full bg-white border-2 border-appleGray-200 flex items-center justify-center font-bold text-xs hover:border-tsaBlue focus:outline-none transition-all duration-300" id="tn-2030">30</button>
+                    <button onclick="selectTimelineYear(2031, 100)" class="timeline-node relative z-10 w-10 h-10 rounded-full bg-white border-2 border-appleGray-200 flex items-center justify-center font-bold text-xs hover:border-tsaBlue focus:outline-none transition-all duration-300" id="tn-2031">31</button>
+                </div>
+
+                <div class="max-w-4xl mx-auto bg-appleGray-50 p-6 rounded-2xl border border-appleGray-100 min-h-[220px] transition-all duration-300" id="timelineContent">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-appleGray-100 bg-white py-12 mt-12 text-center text-xs text-appleGray-200">
+        <div class="mx-auto max-w-7xl px-6 space-y-4">
+            <p class="font-semibold text-appleGray-800">Traktionssysteme Austria GmbH | Strategic Interactive Playbook</p>
+            <p>Konzipiert für B2B-Marktentwicklung und strategische Thought-Leadership-Kommunikation auf LinkedIn (2026 – 2031).</p>
+            <p>© 2026 TSA Traktionssysteme Austria. Alle Rechte vorbehalten. Apple-Stil Mockup.</p>
+        </div>
+    </footer>
+
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-appleGray-800 text-white px-5 py-3 rounded-xl shadow-lg flex items-center space-x-3 translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span class="text-xs font-semibold">Post erfolgreich kopiert!</span>
+    </div>
+
+    <script>
+        // --- 1. DATA DEFINITIONS ---
+        const eventsData =,
+                relevance:,
+                stakeholders: "NJ Transit, Sound Transit Seattle, Toronto Transit Commission (TTC), Metrolink LA, TransLink Vancouver sowie die Transport-Mobilitäts-Abteilung der FIFA.",
+                opportunities: "Fokus liegt primär auf dem After-Sales-Bereich, der Ersatzteilversorgung und dem herstellerunabhängigen Retrofit-Service. Der extreme Stresstest für die alternden US-Flotten ermöglicht es TSA, sich über den 'Long-Life Value Service' für anschließende Modernisierungen zu bewerben.",
+                hook: "New York Penn Station sperrt Gleise für Pendler: Wie die WM 2026 den nordamerikanischen Nahverkehr an seine physikalischen Grenzen bringt."
+            },
+            {
+                id: 2,
+                name: "Milano Cortina 2026",
+                year: "2026",
+                location: "Mailand, Cortina d'Ampezzo (Italien)",
+                visitors: "Über 1.500 Athleten, Hunderttausende Zuschauer",
+                score: 8.7,
+                metrics: { tech: 8, access: 9, volume: 8, safety: 10 },
+                problems: "Enorme geografische Fragmentierung der Sportstätten im alpinen Raum. Transport von Massen aus Mailand/Venedig in sensible, verkehrstechnisch empfindliche Bergregionen erfordert drastische Reduktion des Pkw-Individualverkehrs zur CO₂-Vermeidung.",
+                infrastructure:,
+                relevance:,
+                stakeholders: "Rete Ferroviaria Italiana (RFI), ATM Mailand, Trenitalia, Italo, das italienische Verkehrsministerium (MIT) sowie Stadler Rail.",
+                opportunities: "Direkte Lieferchancen von Getrieben und Antrieben für Stadtbahn- und Metro-Modernisierungen (z. B. Nachbereitung der Tram-Projekte mit Stadler). Die extrem dichten Metrosysteme und alpinen Zuglinien bieten ideale After-Sales- und Neugeschäftspotenziale für TSA.",
+                hook: "74 neue Stadler Tramlink Straßenbahnen für die italienische Tram-Hauptstadt: Wie innovative Drehgestelle und Antriebe den städtischen Lärmpegel drastisch senken."
+            },
+            {
+                id: 3,
+                name: "Aichi-Nagoya 2026",
+                year: "2026",
+                location: "Nagoya & Aichi (Japan)",
+                visitors: "15.000 Athleten & Teamoffizielle",
+                score: 7.1,
+                metrics: { tech: 7, access: 6, volume: 6, safety: 10 },
+                problems: "Verzicht auf ein zentrales, permanent gebautes Athletendorf aus Kostengründen. Unterbringung von 4.600 Personen auf dem Kreuzfahrtschiff 'Costa Serena' im Hafen und 2.000 in temporären Holzhütten. Zusammenfallen mit der pazifischen Taifun-Saison erfordert robusteste, wetterfeste Zubringer-Mobilität.",
+                infrastructure:,
+                relevance:,
+                stakeholders: "Aichi-Nagoya Games Organizing Committee, Nagoya Municipal Transportation Bureau, JR Central, Meitetsu, Kintetsu.",
+                opportunities: "Indirekte Positionierung über globale OEMs zur Lieferung vibrations- und feuchtigkeitsresistenter Antriebe für anspruchsvolle klimatische Hafenanbindungen in Ostasien.",
+                hook: "Ein Kreuzfahrtschiff als Olympisches Dorf und Taifun-Saison vor der Tür: Wie Nagoya die Transportresilienz für 15.000 Sportler sichert."
+            },
+            {
+                id: 4,
+                name: "Expo 2027 Belgrade",
+                year: "2027",
+                location: "Belgrad (Serbien)",
+                visitors: "Millionen Besucher / über 120 Länder",
+                score: 7.1,
+                metrics: { tech: 8, access: 7, volume: 7, safety: 6 },
+                problems: "Das neue Expo-Gelände und das Nationalstadion entstehen auf der 'grünen Wiese' im Vorort Surcin ohne Anbindung. Verschärfte Sicherheitsdebatten im Schienensektor nach dem Bahnhofeinsturz in Novi Sad 2024 erfordern lückenlose Qualität und normative Konformität.",
+                infrastructure:,
+                relevance:,
+                stakeholders: "Serbisches Finanzministerium, Expo 2027 d.o.o., Infrastruktura Železnice Srbije, chinesische Staatskonzerne (PowerChina, CRIC, CCCC).",
+                opportunities: "Da Bauaufträge politisch an chinesische Konsortien vergeben wurden, liegt die B2B-Chance für TSA in der Zulieferung zertifizierter, brandschutz- und normkonformer Antriebskomponenten an europäische OEMs, die sich für die Fahrzeugausschreibungen der Staatsbahn bewerben.",
+                hook: "18 Milliarden Dollar für Belgrads Schienenoffensive: Warum höchste Sicherheitsstandards und zertifizierte Antriebe im modernen Schienenbau unumgänglich sind."
+            },
+            {
+                id: 5,
+                name: "Panamerikanische Spiele 2027",
+                year: "2027",
+                location: "Lima (Peru)",
+                visitors: "7.000 Athleten / 50.000 Touristen",
+                score: 7.5,
+                metrics: { tech: 8, access: 7, volume: 7, safety: 8 },
+                problems: "Lima gilt als eine der verkehrsreichsten Megacitys Lateinamerikas. Dezentrale Sportstätten müssen komplett staufrei und emissionsarm verbunden werden, was mit dem konventionellen Straßensystem unmöglich ist.",
+                infrastructure:,
+                relevance:,
+                stakeholders: "MTC (Ministerium für Transport), IPD (Instituto Peruano del Deporte), Metro Lima Betreiber, Alstom, CAF, chinesische Konsortien.",
+                opportunities: "Anden-Topografie und extremes Klima verlangen hochrobuste Spezialantriebe. TSA kann sich über europäische Fahrzeughersteller für die Lieferung staub- und vibrationsresistenter Radsatzgetriebe und Traktionsmotoren für das Lima-Ica-Projekt und die Andenbahn empfehlen.",
+                hook: "Mit 200 km/h durch die Küstenwüste: Wie Perus neue 6,5-Milliarden-Dollar-Schnellbahn Lima–Ica die Mobilität Lateinamerikas revolutioniert."
+            },
+            {
+                id: 6,
+                name: "UEFA Euro 2028",
+                year: "2028",
+                location: "Vereinigtes Königreich & Irland",
+                visitors: "Fast 3 Millionen Stadionbesucher",
+                score: 8.7,
+                metrics: { tech: 9, access: 8, volume: 8, safety: 10 },
+                problems: "Turnier erstreckt sich über 4 Nationen, was massive interurbane Logistikkoordination verlangt. Umweltschonende Vorgabe: Über 80% aller Ticketinhaber müssen ausschließlich per ÖPNV, S-Bahn oder Bus zu den 9 Stadien reisen.",
+                infrastructure:,
+                relevance:,
+                stakeholders: "Transport for London (TfL), Transport for Greater Manchester (TfGM), irische NTA, Wrightbus, Alexander Dennis, Alstom, Stadler Rail.",
+                opportunities: "Enorme Absatzpotenziale für TSAs hocheffiziente Permanentmagnetmotoren und Asynchronantriebe für die neuen Elektrobusflotten britischer OEMs (z. B. Wrightbus, ADL) sowie für anstehende Stadtbahn-Erweiterungen.",
+                hook: "3 Millionen Fans, 4 Nationen, 80 % ÖPNV-Quote: Warum die Euro 2028 den emissionsfreien Nahverkehr auf der Straße und Schiene massiv beschleunigt."
+            },
+            {
+                id: 7,
+                name: "Los Angeles 2028 (Sommer-Olympia)",
+                year: "2028",
+                location: "Los Angeles (USA)",
+                visitors: "15.000 Athleten / 15 Millionen Zuschauer",
+                score: 10.0,
+                metrics: { tech: 10, access: 10, volume: 10, safety: 10 },
+                problems: "LA ist chronisch überlastet und extrem Pkw-geprägt. Das offizielle Olympia-Mobilitätsziel lautet 'Car-Free Games': Alle Zuschauer müssen Spielstätten ausschließlich per ÖPNV erreichen, was 1 Million zusätzliche Fahrten pro Tag bedeutet.",
+                infrastructure:,
+                relevance:,
+                stakeholders: "LA Metro, Caltrans, Metrolink, LA Mayor's Office, Siemens Mobility, Alstom, New Flyer, Gillig, BYD.",
+                opportunities: "Absolutes Fokusereignis. Hervorragende Absatzaussichten sowohl im Rail- als auch im Road-Sektor. Über die Niederlassung Traction Systems Inc. in Somerville, NJ, erfüllt TSA die strengen 'Buy America'-Kriterien vollständig.",
+                hook: "20 Milliarden Dollar für 28 Projekte: Wie Los Angeles vor den Spielen 2028 den Sprung zur schienen- und busbasierten Megacity vollzieht."
+            },
+            {
+                id: 8,
+                name: "French Alps 2030 (Winter-Olympia)",
+                year: "2030",
+                location: "Französische Alpen (Frankreich)",
+                visitors: "Millionen Wintersportfans / globale Delegationen",
+                score: 9.1,
+                metrics: { tech: 10, access: 9, volume: 8, safety: 9 },
+                problems: "Transport gewaltiger Zuschauerströme in fragile, alpine Ökosysteme unter extremen Winterbedingungen. Französischer Staatsplan verbietet neue Parkplatzbauten an den Skipisten und erzwingt schienen- und seilbahngebundene Anreise.",
+                infrastructure:,
+                relevance:,
+                stakeholders: "SNCF Réseau, SNCF Gares & Connexions, SOLIDEO (Olympia-Infrastrukturgesellschaft), Alstom, CAF.",
+                opportunities: "Gebirgsbahnen mit starken Steigungen und Minustemperaturen verlangen mechanisch und thermisch exzellente Antriebe. TSA besitzt jahrzehntelange Erfahrung bei Spezialantrieben und kann sich über Alstom/CAF für die Nachtzug- und Regionalbahnflotten exzellent platzieren.",
+                hook: "325 Millionen Euro für 280 km Gebirgsbahn: Wie die Modernisierung der Alpenstrecke Aix-en-Provence–Briançon die nachhaltige Zukunft des Bergtourismus sichert."
+            },
+            {
+                id: 9,
+                name: "FIFA World Cup 2030",
+                year: "2030",
+                location: "Marokko, Spanien, Portugal",
+                visitors: "Millionen transkontinentale Fans",
+                score: 9.0,
+                metrics: { tech: 9, access: 9, volume: 9, safety: 9 },
+                problems: "Erste transkontinentale WM (Europa/Afrika) erfordert beispiellose logistische Synchronisierung. Teams und Fans pendeln hochfrequent zwischen Metropolen wie Madrid, Lissabon und Casablanca. Große Seehäfen und Flughäfen müssen drastisch erweitert werden.",
+                infrastructure:,
+                relevance:,
+                stakeholders: "Marokkanisches Ministerium für Ausrüstung & Wasser, ONCF (Staatsbahn Marokko), RENFE (Spanien), CP (Portugal), Alstom, CAF, Talgo.",
+                opportunities: "Gigantische Neubaulinien für HSR und schwere Hafenelektromobilität. TSA hat hervorragende Lieferchancen für Hochleistungs-Traktionsmotoren und Getriebe über OEMs (Alstom/CAF) sowie für Schwerlast-Logistikfahrzeuge in den neuen Megahäfen.",
+                hook: "Ein 100-Milliarden-Dollar-Infrastrukturprogramm verbindet Europa und Afrika: Marokkos gigantische Schienen- und Hafenoffensive für die WM 2030."
+            },
+            {
+                id: 10,
+                name: "Expo 2030 Riyadh",
+                year: "2030",
+                location: "Riad (Saudi-Arabien)",
+                visitors: "Erwartet: über 42 Millionen Besuche",
+                score: 9.2,
+                metrics: { tech: 10, access: 8, volume: 9, safety: 10 },
+                problems: "Sicherung eines fehlerfreien ÖPNV-Massenstroms in einer rasant wachsenden Wüstenmetropole bei extremen Klimabedingungen (Sand, Hitze über 45 °C). Besucher müssen voll klimatisiert in nur 10 Minuten vom Flughafen zur Weltausstellung gelangen.",
+                infrastructure:,
+                relevance:,
+                stakeholders: "Royal Commission for Riyadh City (RCRC), Expo 2030 Riyadh Company, Nesma & Partners, Al Yamama Company, Siemens, Alstom, CRRC.",
+                opportunities: "Die extreme Wüstenhitze schließt Billiganbieter aus. TSA besitzt mit dem patentierten DACS-Kühlsystem und der TSADUR-Klasse-220-Isolierung zwei unschlagbare Alleinstellungsmerkmale für diese Ausschreibungen über Siemens/Alstom.",
+                hook: "Vom Flugzeug zur Expo in 10 Minuten: Wie die fahrerlose Metro Riad 42 Millionen Besucher bei Extremtemperaturen mitten durch die Wüste befördert."
+            }
+        ];
+
+        const stakeholdersData =;
+
+        const postsData =;
+
+        const seriesData =
+            },
+            {
+                title: "Serie 2: Schienentransit unter Extrembedingungen",
+                target: "Nahverkehrsbetreiber in Wüstenregionen, OEMs im mittleren Osten, Schieneningenieure.",
+                message: "Konstruktive Bewältigung von Quarzstaub und thermischer Dauerlast über 45 °C im Schienenverkehr.",
+                posts:
+            },
+            {
+                title: "Serie 3: Alpin-Resilienz – Schienenverkehr in dünner Luft",
+                target: "Betreiber von Gebirgsbahnen, europäische Schienen-OEMs, SNCF-Infrastrukturplaner.",
+                message: "Engineering für Schienenfahrzeuge auf steilen, topografisch schwierigen und winterlichen Gebirgsstrecken.",
+                posts:
+            },
+            {
+                title: "Serie 4: Die USA-Infrastrukturoffensive: 'Twenty-Eight by '28' im B2B-Check",
+                target: "US Transit Authorities (APTAs), amerikanische Schienen- und Bus-OEMs, Verkehrsplaner.",
+                message: "Wie Los Angeles vor den Spielen 2028 den Sprung zur schienen- und busbasierten Megacity vollzieht und TSA als US-Schlüsselpartner agiert.",
+                posts:
+            },
+            {
+                title: "Serie 5: Die unsichtbaren Helden des Großereignis-Transits (Service-Fokus)",
+                target: "Instandhaltungsleiter, Service-Ingenieure, CFOs von Verkehrsbetrieben.",
+                message: "Die kritische Bedeutung von After-Sales, Retrofits und System-Upgrades zur Gewährleistung maximaler Flottenverfügbarkeit.",
+                posts:
+            }
+        ];
+
+        const timelineRecommendations = {
+            2026: {
+                title: "2026: USA WM-Betrieb & Mailand-Cortina Service-Phase",
+                focus: "After-Sales & Retrofit",
+                desc: "Fokus liegt auf der optimalen After-Sales-Betreuung und dem schnellen Ersatzteilservice während des WM-Stresstests in den USA (NJ Transit etc.) und den Winterspielen in Mailand/Cortina d'Ampezzo. Hervorragender Zeitraum, um über LinkedIn die absolute Systemzuverlässigkeit von TSA-Antrieben unter maximaler Last zu demonstrieren."
+            },
+            2027: {
+                title: "2027: Serbien Flughafenbahn & Lima Gebirgsbahn",
+                focus: "Ausschreibungsspezifikation & Qualitätsnachweis",
+                desc: "Beobachtung und Begleitung der Schienennetz-Ausschreibungen für die neue Flughafenbahn zur Specialized Expo Belgrad 2027 sowie der anspruchsvollen Andenbahnprojekte in Peru. Kommunikativer Schwerpunkt liegt auf maximaler Qualität, Brandschutznachweisen und mechanischer Resilienz."
+            },
+            2028: {
+                title: "2028: USA 'Buy America' & UK Euro 2028",
+                focus: "Local Content & E-Bus-Offensive",
+                desc: "Absolutes Peak-Jahr für Nordamerika durch LA 2028. Vertriebsfokus auf die Einhaltung der 'Buy America'-Kriterien über Traction Systems Inc. in Somerville. Parallel dazu Vertriebsoffensive im E-Bus- und BRT-Sektor im UK für die Euro 2028."
+            },
+            2029: {
+                title: "2029: Vorbereitung der Winterspiele 2030 & World Games",
+                focus: "Systemintegration & ECI (Early Contractor Involvement)",
+                desc: "Frühzeitige Einbindung in die Fahrzeugspezifikationen der französischen SNCF für die eingleisigen Alpenbahnen der Winterspiele 2030. Demonstration der überlegenen Getriebe- und Motoreffizienz bei starken Steigungen."
+            },
+            2030: {
+                title: "2030: Saudi-Arabien Wüstenkühlung & Marokko Ports Strategy",
+                focus: "Wüsten-Kompaktheit & Schwere Logistikantriebe",
+                desc: "Platzierung des DACS-Kühlsystems und der TSADUR-Klasse-220-Isolierung als einziger sicherer Standard für Riad 2030. Akquisition im Road-Sektor für schwere elektrische Terminalzugmaschinen und Logistikfahrzeuge im Rahmen der marokkanischen Seehafenerweiterungen."
+            },
+            2031: {
+                title: "2031: Ausblick auf Saudi-Arabien WM 2034 & Hyperloop-Forschung",
+                focus: "Next-Generation Mobility & Magnetschwebetechnik",
+                desc: "Weichenstellung für die Schienen- und Metro-Großprojekte der WM 2034 in Saudi-Arabien. Kommunikative Begleitung der TSA-Forschungsprojekte zu Linear- und Magnetschwebemotoren (Hyperloop) für zukunftsweisende kognitive Megastädte wie NEOM."
+            }
+        };
+
+        // --- 2. INTERACTIVE APP LOGIC ---
+
+        // Event Explorer Renderer
+        function renderEventsList() {
+            const container = document.getElementById('eventListContainer');
+            container.innerHTML = '';
+            eventsData.forEach((event, idx) => {
+                const isSelected = event.id === 1;
+                const activeClasses = isSelected 
+                   ? 'bg-tsaBlue text-white border-tsaBlue shadow-md' 
+                    : 'bg-white text-appleGray-800 border-appleGray-100 hover:border-appleGray-200';
+                
+                const scoreBg = isSelected? 'bg-white/20 text-white' : 'bg-tsaBlue-muted text-tsaBlue';
+
+                container.innerHTML += `
+                    <div onclick="selectEvent(${event.id}, this)" class="event-nav-item cursor-pointer p-4 rounded-xl border transition-all duration-200 ${activeClasses}" data-id="${event.id}">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-semibold uppercase tracking-wider ${isSelected? 'text-white/80' : 'text-appleGray-200'}">${event.year} | ${event.location.split(',')}</span>
+                            <span class="text-xs font-bold px-2 py-0.5 rounded-full ${scoreBg}">Relevanz: ${event.score.toFixed(1)}</span>
+                        </div>
+                        <h3 class="font-bold text-sm mt-1 tracking-tight">${event.name}</h3>
+                    </div>
+                `;
+            });
+            // Auto select first event detail
+            renderEventDetail(1);
+        }
+
+        function selectEvent(eventId, element) {
+            // Reset active classes
+            document.querySelectorAll('.event-nav-item').forEach(item => {
+                item.className = "event-nav-item cursor-pointer p-4 rounded-xl border transition-all duration-200 bg-white text-appleGray-800 border-appleGray-100 hover:border-appleGray-200";
+                const event = eventsData.find(e => e.id == item.dataset.id);
+                // Reset inner badges
+                const badge = item.querySelector('.rounded-full');
+                badge.className = "text-xs font-bold px-2 py-0.5 rounded-full bg-tsaBlue-muted text-tsaBlue";
+                const spanYear = item.querySelector('span:first-child');
+                spanYear.className = "text-xs font-semibold uppercase tracking-wider text-appleGray-200";
+            });
+
+            // Set current active
+            element.className = "event-nav-item cursor-pointer p-4 rounded-xl border transition-all duration-200 bg-tsaBlue text-white border-tsaBlue shadow-md";
+            const currentBadge = element.querySelector('.rounded-full');
+            currentBadge.className = "text-xs font-bold px-2 py-0.5 rounded-full bg-white/20 text-white";
+            const currentSpanYear = element.querySelector('span:first-child');
+            currentSpanYear.className = "text-xs font-semibold uppercase tracking-wider text-white/80";
+
+            renderEventDetail(eventId);
+        }
+
+        function renderEventDetail(eventId) {
+            const event = eventsData.find(e => e.id === eventId);
+            const container = document.getElementById('eventDetailContainer');
+            
+            // Fade effect simulation
+            container.style.opacity = '0.3';
+            
+            setTimeout(() => {
+                container.innerHTML = `
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-appleGray-100 pb-4">
+                        <div>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-tsaBlue">${event.year} | ${event.location}</span>
+                            <h3 class="text-2xl font-bold tracking-tight text-appleGray-900 mt-0.5">${event.name}</h3>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-xs font-medium text-appleGray-200">TSA Score:</span>
+                            <span class="text-2xl font-black text-tsaBlue bg-tsaBlue-muted px-4 py-1.5 rounded-xl border border-tsaBlue/20">${event.score.toFixed(1)}/10</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-appleGray-900 flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                    <span>Mobilitätsprobleme & Belastungen</span>
+                                </h4>
+                                <p class="text-appleGray-200 mt-1.5 leading-relaxed text-xs">${event.problems}</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-appleGray-900 flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-tsaBlue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                    <span>Geplante Infrastrukturprojekte</span>
+                                </h4>
+                                <ul class="list-disc list-inside text-appleGray-200 mt-1.5 space-y-1 text-xs">
+                                    ${event.infrastructure.map(inf => `<li>${inf}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-appleGray-900 flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.952 11.952 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                    <span>TSA Business-Opportunities</span>
+                                </h4>
+                                <p class="text-appleGray-200 mt-1.5 leading-relaxed text-xs p-3 bg-green-50/50 rounded-xl border border-green-100">${event.opportunities}</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-appleGray-900 flex items-center space-x-2">
+                                    <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                    <span>Beteiligte Akteure</span>
+                                </h4>
+                                <p class="text-appleGray-200 mt-1.5 text-xs">${event.stakeholders}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-appleGray-100">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-appleGray-200 bg-appleGray-100 px-3 py-1 rounded-full">Relevanz-Fokus:</span>
+                        ${event.relevance.map(rel => `<span class="text-[10px] font-bold uppercase tracking-wider text-tsaBlue bg-tsaBlue-muted px-3 py-1 rounded-full border border-tsaBlue/10">${rel}</span>`).join('')}
+                    </div>
+
+                    <div class="bg-appleGray-50 p-4 rounded-2xl border border-appleGray-100 flex items-center justify-between gap-4">
+                        <div class="space-y-1">
+                            <span class="text-[9px] font-bold uppercase tracking-widest text-purple-600 bg-purple-50 px-2 py-0.5 rounded border border-purple-100">LinkedIn Hook Vorschlag</span>
+                            <p class="text-xs font-semibold text-appleGray-900 italic">"${event.hook}"</p>
+                        </div>
+                        <button onclick="copyToClipboard('${event.hook.replace(/'/g, "\\'")}')" class="flex-shrink-0 bg-white hover:bg-appleGray-50 border border-appleGray-200 hover:border-appleGray-300 p-2.5 rounded-xl transition shadow-sm active:scale-95" title="Kopieren">
+                            <svg class="w-4 h-4 text-appleGray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                        </button>
+                    </div>
+                `;
+                container.style.opacity = '1';
+            }, 150);
+        }
+
+        // Scoring datatable sort and render logic
+        let currentSortDirection = true; // true = desc, false = asc
+        let currentSortCol = 7; // Weighted Score default
+
+        function sortTable(colIdx) {
+            currentSortDirection =!currentSortDirection;
+            currentSortCol = colIdx;
+            renderScoringTable();
+        }
+
+        function renderScoringTable() {
+            const tbody = document.getElementById('scoringTableBody');
+            tbody.innerHTML = '';
+
+            // Clone to avoid mutating original
+            let sortedEvents =;
+
+            sortedEvents.sort((a, b) => {
+                let valA, valB;
+                switch (currentSortCol) {
+                    case 0: // Rang (based on final weighted score actually)
+                        valA = a.score; valB = b.score;
+                        return currentSortDirection? valB - valA : valA - valB;
+                    case 1: // Name
+                        valA = a.name; valB = b.name;
+                        return currentSortDirection? valA.localeCompare(valB) : valB.localeCompare(valA);
+                    case 2: // Ort / Jahr
+                        valA = a.year; valB = b.year;
+                        return currentSortDirection? valA.localeCompare(valB) : valB.localeCompare(valA);
+                    case 3: // Tech
+                        valA = a.metrics.tech; valB = b.metrics.tech;
+                        break;
+                    case 4: // Access
+                        valA = a.metrics.access; valB = b.metrics.access;
+                        break;
+                    case 5: // Volume
+                        valA = a.metrics.volume; valB = b.metrics.volume;
+                        break;
+                    case 6: // Safety
+                        valA = a.metrics.safety; valB = b.metrics.safety;
+                        break;
+                    case 7: // Weighted Score
+                        valA = a.score; valB = b.score;
+                        break;
+                }
+                return currentSortDirection? valB - valA : valA - valB;
+            });
+
+            sortedEvents.forEach((event, idx) => {
+                const rang = eventsData.indexOf(event) + 1;
+                tbody.innerHTML += `
+                    <tr class="hover:bg-appleGray-50/50 transition">
+                        <td class="py-4 px-6 font-bold text-appleGray-900 text-xs">${rang}</td>
+                        <td class="py-4 px-6 font-semibold text-appleGray-900 text-xs">${event.name}</td>
+                        <td class="py-4 px-6 text-appleGray-200 text-xs">${event.location.split(',')} (${event.year})</td>
+                        <td class="py-4 px-4 text-center text-xs font-semibold">${event.metrics.tech}</td>
+                        <td class="py-4 px-4 text-center text-xs font-semibold">${event.metrics.access}</td>
+                        <td class="py-4 px-4 text-center text-xs font-semibold">${event.metrics.volume}</td>
+                        <td class="py-4 px-4 text-center text-xs font-semibold">${event.metrics.safety}</td>
+                        <td class="py-4 px-6 text-right text-xs font-extrabold text-tsaBlue bg-tsaBlue-muted/20">${event.score.toFixed(1)}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        // B2B Stakeholder Renderer & Filter
+        let activeStakeholderFilter = 'all';
+        function filterStakeholders(filterType) {
+            activeStakeholderFilter = filterType;
+            // Reset tabs UI
+            document.querySelectorAll('#stakeholders button').forEach(btn => {
+                btn.className = "px-4 py-2 text-sm font-medium border-b-2 border-transparent text-appleGray-200 hover:text-appleGray-800 transition";
+            });
+            document.getElementById(`tab-${filterType}`).className = "px-4 py-2 text-sm font-semibold border-b-2 border-tsaBlue text-tsaBlue transition";
+
+            renderStakeholders();
+        }
+
+        function renderStakeholders() {
+            const container = document.getElementById('stakeholderContainer');
+            container.innerHTML = '';
+
+            const filtered = activeStakeholderFilter === 'all' 
+               ? stakeholdersData 
+                : stakeholdersData.filter(s => s.type === activeStakeholderFilter);
+
+            filtered.forEach(s => {
+                let badgeColor = '';
+                let typeLabel = '';
+                if(s.type === 'authority') { badgeColor = 'bg-blue-100 text-blue-800'; typeLabel = 'Behörde'; }
+                if(s.type === 'operator') { badgeColor = 'bg-purple-100 text-purple-800'; typeLabel = 'Betreiber'; }
+                if(s.type === 'oem') { badgeColor = 'bg-orange-100 text-orange-800'; typeLabel = 'Fahrzeughersteller'; }
+
+                container.innerHTML += `
+                    <div class="bg-white p-6 rounded-2xl border border-appleGray-100 shadow-sm flex flex-col justify-between space-y-4 hover:border-appleGray-200 transition">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${badgeColor}">${typeLabel}</span>
+                                <span class="text-[10px] font-semibold text-appleGray-200">${s.event}</span>
+                            </div>
+                            <h4 class="text-base font-bold text-appleGray-900 tracking-tight">${s.name}</h4>
+                            <p class="text-xs text-appleGray-200 leading-relaxed"><strong class="text-appleGray-800">Rolle:</strong> ${s.role}</p>
+                        </div>
+                        <div class="p-3 bg-appleGray-50 rounded-xl border border-appleGray-100">
+                            <span class="text-[9px] font-bold uppercase tracking-wider text-tsaBlue block mb-0.5">TSA Einflusspfad:</span>
+                            <p class="text-[11px] font-medium text-appleGray-900 leading-relaxed">${s.strategy}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // LinkedIn Copier & Renderer
+        let activePostFilter = 'all';
+        function filterPosts(filterType) {
+            activePostFilter = filterType;
+            // Reset active button state
+            document.querySelectorAll('#linkedin button').forEach(btn => {
+                if (btn.id.startsWith('p-')) {
+                    btn.className = "px-4 py-1.5 rounded-full text-xs font-medium bg-white text-appleGray-200 border border-appleGray-100 hover:border-appleGray-200 transition";
+                }
+            });
+            document.getElementById(`p-${filterType}`).className = "px-4 py-1.5 rounded-full text-xs font-semibold bg-tsaBlue text-white border border-tsaBlue transition";
+
+            renderPosts();
+        }
+
+        function renderPosts() {
+            const container = document.getElementById('postsContainer');
+            container.innerHTML = '';
+
+            const filtered = activePostFilter === 'all'
+               ? postsData
+                : postsData.filter(p => p.category === activePostFilter);
+
+            filtered.forEach(p => {
+                // Generate pretty badge
+                let catBadge = '';
+                if(p.category === 'road') catBadge = 'Road & E-Bus';
+                if(p.category === 'rail') catBadge = 'Rail & Metro';
+                if(p.category === 'service') catBadge = 'After-Sales & Retrofit';
+                if(p.category === 'cooling') catBadge = 'Extreme Bedingungen (DACS)';
+
+                container.innerHTML += `
+                    <div class="bg-white p-6 rounded-3xl border border-appleGray-100 shadow-sm flex flex-col justify-between space-y-4 hover:border-appleGray-200 transition">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[9px] font-black uppercase tracking-widest text-tsaBlue bg-tsaBlue-muted px-2.5 py-1 rounded-full">${catBadge}</span>
+                                <span class="text-[10px] text-appleGray-200 font-semibold">B2B Content Draft</span>
+                            </div>
+                            <h4 class="text-base font-bold text-appleGray-900 tracking-tight">${p.title}</h4>
+                            <div class="bg-appleGray-50 p-4 rounded-2xl border border-appleGray-100 max-h-[180px] overflow-y-auto">
+                                <p class="text-xs font-serif text-appleGray-800 whitespace-pre-line leading-relaxed">${p.text}</p>
+                            </div>
+                        </div>
+                        <button onclick="copyToClipboard('${p.text.replace(/'/g, "\\'").replace(/\n/g, "\\n")}')" class="w-full bg-appleGray-50 hover:bg-tsaBlue hover:text-white border border-appleGray-100 hover:border-tsaBlue text-appleGray-900 text-xs font-bold py-2.5 rounded-xl transition flex items-center justify-center space-x-2 active:scale-95 shadow-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                            <span>Post in Zwischenablage kopieren</span>
+                        </button>
+                    </div>
+                `;
+            });
+        }
+
+        // Accordion Renderer for Content Series
+        function renderSeries() {
+            const container = document.getElementById('seriesAccordion');
+            container.innerHTML = '';
+
+            seriesData.forEach((s, idx) => {
+                container.innerHTML += `
+                    <div class="border border-appleGray-100 rounded-2xl bg-white overflow-hidden shadow-sm transition">
+                        <button onclick="toggleSeries(${idx})" class="w-full p-5 text-left flex items-center justify-between hover:bg-appleGray-50 transition focus:outline-none">
+                            <div class="space-y-1 pr-4">
+                                <h4 class="font-bold text-appleGray-900 text-sm md:text-base tracking-tight">${s.title}</h4>
+                                <p class="text-[11px] text-appleGray-200">Zielgruppe: <strong class="text-appleGray-800">${s.target}</strong></p>
+                            </div>
+                            <svg id="arrow-${idx}" class="w-5 h-5 text-appleGray-200 transform transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div id="content-${idx}" class="hidden border-t border-appleGray-100 bg-appleGray-50/50 p-5 space-y-4 transition-all duration-300">
+                            <div class="p-3 bg-tsaBlue-muted rounded-xl border border-tsaBlue/10">
+                                <span class="text-[9px] font-bold uppercase tracking-wider text-tsaBlue block mb-0.5">Strategische Kernbotschaft</span>
+                                <p class="text-xs font-semibold text-appleGray-900 leading-relaxed">${s.message}</p>
+                            </div>
+                            <div class="space-y-2">
+                                <span class="text-[9px] font-bold uppercase tracking-wider text-appleGray-200 block">Post-Fahrplan (Kampagne)</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    ${s.posts.map(post => `
+                                        <div class="bg-white p-3 rounded-xl border border-appleGray-100 text-xs">
+                                            <p class="font-medium text-appleGray-900">${post}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function toggleSeries(idx) {
+            const panel = document.getElementById(`content-${idx}`);
+            const arrow = document.getElementById(`arrow-${idx}`);
+            const isHidden = panel.classList.contains('hidden');
+
+            // Close all
+            for(let i=0; i<seriesData.length; i++) {
+                document.getElementById(`content-${i}`).classList.add('hidden');
+                document.getElementById(`arrow-${i}`).classList.remove('rotate-180');
+            }
+
+            if (isHidden) {
+                panel.classList.remove('hidden');
+                arrow.classList.add('rotate-180');
+            }
+        }
+
+        // Timeline Slider Node Selector
+        function selectTimelineYear(year, progressPercentage) {
+            // Reset node active statuses
+            document.querySelectorAll('.timeline-node').forEach(node => {
+                node.className = "timeline-node relative z-10 w-10 h-10 rounded-full bg-white border-2 border-appleGray-200 flex items-center justify-center font-bold text-xs hover:border-tsaBlue focus:outline-none transition-all duration-300";
+            });
+
+            // Set current node active
+            document.getElementById(`tn-${year}`).className = "timeline-node relative z-10 w-10 h-10 rounded-full bg-tsaBlue text-white border-2 border-tsaBlue flex items-center justify-center font-bold text-xs shadow-md focus:outline-none transition-all duration-300";
+
+            // Update Progress bar width
+            document.getElementById('timelineProgress').style.width = `${progressPercentage}%`;
+
+            // Load Content
+            const content = timelineRecommendations[year];
+            const contentPanel = document.getElementById('timelineContent');
+            
+            contentPanel.style.opacity = '0.3';
+            setTimeout(() => {
+                contentPanel.innerHTML = `
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-appleGray-100 pb-3 mb-3">
+                        <div class="space-y-0.5">
+                            <span class="text-[9px] font-black uppercase tracking-widest text-tsaBlue bg-tsaBlue-muted px-2 py-0.5 rounded border border-tsaBlue/10">Fokus-Marktbeobachtung</span>
+                            <h4 class="text-base font-bold text-appleGray-900 tracking-tight">${content.title}</h4>
+                        </div>
+                        <div class="text-left sm:text-right">
+                            <span class="text-[9px] font-bold text-appleGray-200 block uppercase">Strategischer Schwerpunkt</span>
+                            <span class="text-xs font-bold text-appleGray-800">${content.focus}</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-appleGray-200 leading-relaxed">${content.desc}</p>
+                `;
+                contentPanel.style.opacity = '1';
+            }, 150);
+        }
+
+        // General Quick Copy Utility
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('translate-y-24', 'opacity-0');
+                toast.classList.add('translate-y-0', 'opacity-100');
+                
+                setTimeout(() => {
+                    toast.classList.remove('translate-y-0', 'opacity-100');
+                    toast.classList.add('translate-y-24', 'opacity-0');
+                }, 2000);
+            }).catch(err => {
+                alert('Fehler beim Kopieren des Textes in die Zwischenablage.');
+            });
+        }
+
+        // --- 3. ON INITIALIZATION ---
+        window.addEventListener('DOMContentLoaded', () => {
+            renderEventsList();
+            renderScoringTable();
+            renderStakeholders();
+            renderPosts();
+            renderSeries();
+            selectTimelineYear(2028, 40); // Select Year 2028 as default roadmap meilenstein
+        });
+    </script>
+</body>
+</html>
